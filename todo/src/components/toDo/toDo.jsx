@@ -4,14 +4,9 @@ import { Task } from "./task"
 
 export const Todo = () => {
 
-    const [toDo, setToDo] = useState([
-        // { "id": 1, "title": "Task 1", "completed":false},
-        // { "id": 2, "title": "Task 2", "completed":false}
-    ])
+    const [toDo, setToDo] = useState([])
 
     const [newToDo, setNewToDo] = useState('')
-
-    const [updateToDo, setUpdateToDo] = useState([])
 
     const addToDo = () => {
         if(newToDo){
@@ -19,7 +14,6 @@ export const Todo = () => {
                 id: toDo.length + 1,
                 title: newToDo,
                 completed: false,
-                edit: false
             }
             setToDo([...toDo, newTask])
             setNewToDo("")
@@ -33,7 +27,7 @@ export const Todo = () => {
     const completeToDo = (id) => {
         setToDo(
             toDo.map((todo) => {
-                if(todo.id === id && newToDo){
+                if(todo.id === id){
                     return {...todo, completed: !todo.completed};
                 } else {
                     return todo;
@@ -41,31 +35,7 @@ export const Todo = () => {
             })
         )
     }
-    
-    const editToDo = (id) => {
-        setToDo(
-            toDo.map((todo) => {
-                if(todo.id === id){
-                    return {...todo, edit: !todo.edit}
-                } else {
-                    return todo
-                }
-            })
-        )
-    }
 
-    const saveToDo = (id) => {
-        if (toDo.findIndex((todo) => todo.id == id)){
-            let updatedToDo = {
-                id: toDo.id,
-                title: updateToDo,
-                completed: false,
-                edit: false
-            }
-            setToDo([...toDo, updatedToDo])
-            setUpdateToDo('')
-        }
-    }
     
     return (
         <div className="todoContainer">
@@ -73,9 +43,7 @@ export const Todo = () => {
             {toDo && toDo.length ? "" : "No Tasks..." }
             {toDo && toDo.map(todo => {
                 return(
-                    <Task title={todo.title} id={todo.id} completed={todo.completed} edit={todo.edit} deleteToDo={deleteToDo} 
-                    updateToDo={saveToDo} 
-                    editToDo={editToDo}
+                    <Task title={todo.title} id={todo.id} completed={todo.completed} deleteToDo={deleteToDo} 
                     completeToDo={completeToDo}/>
                 )
             })}
