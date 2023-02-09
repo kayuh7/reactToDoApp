@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { InputBar } from "./searchBar"
+import { InputBar } from "./inputBar"
 import { Task } from "./task"
 
 export const Todo = () => {
@@ -39,6 +39,7 @@ export const Todo = () => {
     
     return (
         <div className="todoContainer">
+            <h1>my todo list</h1>
             <InputBar newToDo = {newToDo} setNewToDo = {setNewToDo} addToDo = {addToDo}/>
             {toDo && toDo.length ? "" : "No Tasks..." }
             {toDo && toDo.map(todo => {

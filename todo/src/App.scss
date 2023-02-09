@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Delius&family=Rubik+Vinyl&display=swap");
+
+.App {
+  // text-align: center;
+}
+
+.todoContainer {
+  border: 2px solid rgb(109, 175, 232);
+  width: 80vh;
+  padding: 30px;
+  margin: auto;
+  margin-top: 30px;
+  
+  h1 {
+    font-family: 'Rubik Vinyl';
+    font-size: 50px;
+    text-align: center;
+  }
+}
+
+.inputBar {
+  margin: 10px;
+  text-align: center;
+
+  .bar {
+    width: 300px;
+    height: 20px;
+    font-size: 18px;
+    border-radius: 20px;
+    padding: 10px;
+    font-family: "Delius"
+  }
+
+  .addButton {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+
+    .plus {
+      font-size: 20px;
+    }
+  }
+}
+
+.task {
+  font-family: 'Delius';
+  font-size: 20px; 
+  border-bottom: 2px solid black;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  
+  li {
+    list-style: none;
+
+    input {
+      margin-right: 20px;
+      float: left;
+    }
+
+    .todoTitle {
+    }
+
+    button {
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      float: right;
+    }
+  }
+
+}
