@@ -1,20 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Arima+Madurai&family=Delius&family=Rubik+Vinyl&display=swap");
 
-.App {
+body {
   // text-align: center;
+  background-color: #EEE9DA;
 }
 
 .todoContainer {
-  border: 2px solid rgb(109, 175, 232);
+  border: 2px solid #6096B490;
   width: 80vh;
-  padding: 30px;
   margin: auto;
   margin-top: 30px;
-  
-  h1 {
-    font-family: 'Rubik Vinyl';
-    font-size: 50px;
-    text-align: center;
+  box-shadow: 6px 5px 5px #A7727D90;
+  border-radius: 10px;
+
+  .title {
+    background-color: #BDCDD6;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #93BFCF80;
+
+    h1 {
+      font-family: 'Rubik Vinyl';
+      font-size: 50px;
+      text-align: center;
+      color: #E8C4C4;
+      -webkit-text-stroke: 1px #A7727D;
+    }
+  }
+
+  .todo {
+    padding: 30px;
+    background-color: #F9F5E7;
   }
 }
 
@@ -44,7 +60,7 @@
 
 .task {
   font-family: 'Delius';
-  font-size: 20px; 
+  font-size: 18px; 
   border-bottom: 2px solid black;
   padding-bottom: 10px;
   padding-top: 10px;
@@ -66,6 +82,7 @@
       border: none;
       background-color: transparent;
       float: right;
+      font-size: 17px;
     }
   }
 

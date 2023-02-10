@@ -39,15 +39,19 @@ export const Todo = () => {
     
     return (
         <div className="todoContainer">
-            <h1>my todo list</h1>
-            <InputBar newToDo = {newToDo} setNewToDo = {setNewToDo} addToDo = {addToDo}/>
-            {toDo && toDo.length ? "" : "No Tasks..." }
-            {toDo && toDo.map(todo => {
-                return(
-                    <Task title={todo.title} id={todo.id} completed={todo.completed} deleteToDo={deleteToDo} 
-                    completeToDo={completeToDo}/>
-                )
-            })}
+            <div className="title">
+                <h1>my todo list</h1>
+            </div>
+            <div className="todo">
+                <InputBar newToDo = {newToDo} setNewToDo = {setNewToDo} addToDo = {addToDo}/>
+                {toDo && toDo.length ? "" : "No Tasks..." }
+                {toDo && toDo.map(todo => {
+                    return(
+                        <Task title={todo.title} id={todo.id} completed={todo.completed} deleteToDo={deleteToDo} 
+                        completeToDo={completeToDo}/>
+                    )
+                })}
+            </div>
         </div>
     )
 }
